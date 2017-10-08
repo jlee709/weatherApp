@@ -1,0 +1,22 @@
+{
+  "name": "weatherapp",
+  "version": "0.0.0",
+  "description": "This is an app testing node.js , asynch dev and api calls ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlee709/weatherApp.git"
+  },
+  "author": "Justin Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlee709/weatherApp/issues"
+  },
+  "homepage": "https://github.com/jlee709/weatherApp#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
