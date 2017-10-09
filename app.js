@@ -1,9 +1,8 @@
 // jshint esversion:6
 
 //libraires used
-const http = require('http');
 const request = require('request');
-const geoCode = require('./geocode/geocode');
+const geoCode = require('./geocode/geocode.js');
 const yargs = require('yargs');
 
 const argv = yargs
@@ -15,9 +14,15 @@ a: {
     describe: 'Address of weather grab ',
     string: true
   }
-  // lat:{}
-  // long:{}
 }).help().alias('help', 'h').argv;
 
+geoCode.geoCodeAddress(argv.address, (errorMsg, results) => {
 
-geoCode.geoCodeAddress(argv.address);
+  if(errorMsg){
+
+    console.log(errorMsg);
+
+  } else {
+    console.log(JSON.stringify(results, undefined, 2));
+  }
+});
