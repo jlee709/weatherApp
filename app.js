@@ -16,10 +16,11 @@ a: {
   }
 }).help().alias('help', 'h').argv;
 
+
+// both location and Weather API calls happen here , first location then Weather
 geoCode.geoCodeAddress(argv.address, (errorMsg, results) => {
 
   if(errorMsg){
-
     console.log(errorMsg);
 
   } else {
@@ -27,7 +28,17 @@ geoCode.geoCodeAddress(argv.address, (errorMsg, results) => {
   }
 });
 
-weather.getWeather();
+  weather.getWeather(results.latitude, results.longitude, (errorMsg, weatherResults) => {
+    if(errorMsg){
+      console.log(errorMsg);
+    } 
+    else {
+      console.log(`The weather for today is going to be ${weatherResults.summary}. 
+      Temperatures are currently ${weatherResults.Temperatur}, but it feels like 
+      ${weatherResults.apparentTemperature}`);
+    }
+  });
+
 
 
 
