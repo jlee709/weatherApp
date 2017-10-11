@@ -3,8 +3,9 @@
 //libraires used
 const request = require('request');
 const geoCode = require('./geocode/geocode.js');
-const yargs = require('yargs');
 const weather = require('./weather/weather.js');
+const yargs = require('yargs');
+
 const argv = yargs
 
 .options({
@@ -26,9 +27,8 @@ geoCode.geoCodeAddress(argv.address, (errorMsg, results) => {
   } else {
     console.log(JSON.stringify(results, undefined, 2));
   }
-});
 
-  weather.getWeather(results.latitude, results.longitude, (errorMsg, weatherResults) => {
+  weather(results.latitude, results.longitude, (errorMsg, weatherResults) => {
     if(errorMsg){
       console.log(errorMsg);
     } 
@@ -38,6 +38,8 @@ geoCode.geoCodeAddress(argv.address, (errorMsg, results) => {
       ${weatherResults.apparentTemperature}`);
     }
   });
+});
+
 
 
 
