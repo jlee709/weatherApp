@@ -1,5 +1,7 @@
 // jshint esversion:6
-
+console.log('Justins Node Weather app!!!! This app allows you to search weather data based on zip Codes~!');
+console.log("use the command line to use the app. Some zip codes you can use are:");
+console.log("HAWAII: 96822 ----  NYC: 10022 ---- Miami: 33128 ---- 94110");
 //libraires used
 const yargs = require('yargs');
 
@@ -18,7 +20,8 @@ const argv = yargs
   .help()
   .alias('help', 'h')
   .argv;
-
+  
+ // the argv.address is the zip code you will enter  
 geocode.geocodeAddress(argv.address, (errorMessage, results) => {
   if (errorMessage) {
     console.log(errorMessage);
