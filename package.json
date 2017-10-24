@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jlee709/weatherApp#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "request": "^2.83.0",
     "yargs": "^9.0.1"
   }
