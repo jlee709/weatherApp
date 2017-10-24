@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <title>Justins Weather App!</title>
 </head>
-<body>
-  
+
+<body ng-app="myApp">
+
+
+<div ng-controller="weatherController">
+    <input type="text" ng-model="zipcode" placeholder="enter your zipcode">
+    <button ng-click="submitZipcode()">Get Weather Data</button>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js" type="text/javascript"></script>
+  <script src="js/myApp.js"></script>
+  <script src="js/weatherService.js"></script>
+  <script src="/controller/weatherController.js"></script>
+
 </body>
+
 </html>
